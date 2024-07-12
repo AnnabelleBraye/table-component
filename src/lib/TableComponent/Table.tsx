@@ -2,7 +2,7 @@
  * Main Table component with searchBar, Items per page and Rows
  */
 
-import { ChangeEvent, useEffect, useState } from "react"
+import React, { ChangeEvent, useEffect, useState } from "react"
 import Footer from "./Footer"
 import Header from "./Header"
 import Row from "./Row"

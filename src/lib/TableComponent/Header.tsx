@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React, { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 type HeaderProps<T> = {

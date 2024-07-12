@@ -1,12 +1,12 @@
 {
   "name": "react-table-component-package",
-  "version": "1.4.2",
+  "version": "1.6.0",
   "description": "A table component library where you can display, sort and filter a list",
   "main": "dist/react-table-component-package.cjs.js",
   "module": "dist/react-table-component-package.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && npm run build:types",
     "build:types": "tsc"
   },
   "files": [
