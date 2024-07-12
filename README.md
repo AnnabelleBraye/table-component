@@ -1,30 +1,80 @@
-# React + TypeScript + Vite
+# React Table Component Package
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A library for displaying, sorting, and filtering tables in React applications.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To install the library, use npm:
 
-## Expanding the ESLint configuration
+```bash
+npm install react-table-component-package
+```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Usage
+Import the Table component into your application and use it as follows:
 
-- Configure the top-level `parserOptions` property like this:
+```javascript
+  import { Table, ColType, TableProps } from 'react-table-component-package';
 
-```js
+  const data: User[] = [
+    { id: 1, name: 'John Doe', age: 25, city: 'New York' },
+    { id: 2, name: 'Jane Smith', age: 30, city: 'Los Angeles' },
+    { id: 3, name: 'Tom Johnson', age: 28, city: 'Chicago' },
+  ];
+
+  const columns: ColType<User> = [
+    { header: 'ID', key: 'id' },
+    { header: 'Name', key: 'name' },
+    { header: 'Age', key: 'age' },
+    { header: 'City', key: 'city' },
+  ];
+
+  function App() {
+    return (
+      <div>
+        <h2>User Table</h2>
+        <Table data={data} columns={columns} />
+      </div>
+    );
+  }
+```
+
+### Accepted Props (TableProps) ###
+- **data**: An array of objects representing the data to display in the table.
+- **columns**: An array of objects defining the columns of the table with headers (header) and data keys (key).
+
+## Prerequisites ##
+### System Prerequisites ###
+- Node.js version 12 or higher.
+
+## Dependencies ##
+To use react-table-component-package, make sure your project includes Tailwind CSS. Add the following to your *tailwind.config.js* to ensure Tailwind can process styles within the react-table-component-package library:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
 export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+  // other Tailwind CSS configurations
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/react-table-component-package/dist/**/*.{js,jsx,ts,tsx}"
+  ],
+  theme: {},
+  plugins: [],
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## API
+- **Table**: The main component to display a table.
+- **ColType**: Data type for the columns of the table.
+- **TableProps**: Props accepted by the Table component.
+
+## Contributions
+Contributions are welcome! For any major changes, please open an issue for discussion or submit a pull request directly.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Support
+For questions or issues, please open an issue on GitHub or email <annabelle.braye@gmail.com>.
+
