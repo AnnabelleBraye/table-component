@@ -1,5 +1,5 @@
 import React from "react";
-import { ColType } from "."
+import { ColType } from "./Table";
 
 type RowProps<T> = {
   columns: ColType<T>[],
