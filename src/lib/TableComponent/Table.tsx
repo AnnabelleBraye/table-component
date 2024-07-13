@@ -46,7 +46,7 @@ const Table = <T,>({data, columns}: TableProps<T>) => {
             onChange={(e) => handleChangeFilter(e)}
           />
           <div className="flex gap-2">
-            <span className="text-sm font-bold">Show on page</span>
+            <label htmlFor="showOnPage" className="text-sm font-bold">Show on page</label>
             <select
               id="showOnPage" 
               className="border border-gray-300 rounded"
